@@ -1,0 +1,574 @@
+{
+	"info": {
+		"_postman_id": "203267ea-c436-47e1-b4e2-db441cd2d55d",
+		"name": "Triber(social_media)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Getting  User Data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzUwM2UwYWVjNTJkZGZiODk2NTIxYjkxN2ZiOGUyMGMxZjMzMDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHJpYmVyLWJmNGQxIiwiYXVkIjoidHJpYmVyLWJmNGQxIiwiYXV0aF90aW1lIjoxNjAxODk0MTg3LCJ1c2VyX2lkIjoiaEp5M21KakltU2g0dUlGTnB6c2VTWE9YMmYzMiIsInN1YiI6ImhKeTNtSmpJbVNoNHVJRk5wenNlU1hPWDJmMzIiLCJpYXQiOjE2MDE4OTQxODcsImV4cCI6MTYwMTg5Nzc4NywiZW1haWwiOiJhYmNkQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhYmNkQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.mVR_-h_jLZxa8AI9frSaJh3-2jRtgVr4hD43mz9hmStm5H0i0-zYot1YSz2bDWpf0ba9oOBKjAPm6lH53gmVdzvcZJrl_eOJNeNq2dZjdBoSqYdQ5e9i113n2iUqAZZvt1iFGoRX-NYNsuoX3XaX5RctHBYwZbl7cBC7reLAwqbm3IKFn-_ntRhw1NpdOG2i-KUytGQWGcAFsl9ORqoDe12IcYo9wajVC8wGyVyOGQf3IeqtiWNoytIXmvU5m6Nn5NTzKBwf9pdK_5WnVZGcWbwCDQKlnnSfAG0b-isLCO2IwPzP8vqHQ4_HL2Elx4PZ7qwJI01wlL90GYhjnb17qg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting All Screams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/screams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"screams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "creating comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzUwM2UwYWVjNTJkZGZiODk2NTIxYjkxN2ZiOGUyMGMxZjMzMDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHJpYmVyLWJmNGQxIiwiYXVkIjoidHJpYmVyLWJmNGQxIiwiYXV0aF90aW1lIjoxNjAxODI1NjM5LCJ1c2VyX2lkIjoiUmJQRlJGYjNjWGY0Z0ZIenZkOG1HcUxMQmQwMyIsInN1YiI6IlJiUEZSRmIzY1hmNGdGSHp2ZDhtR3FMTEJkMDMiLCJpYXQiOjE2MDE4MjU2MzksImV4cCI6MTYwMTgyOTIzOSwiZW1haWwiOiJuZXcxQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZXcxQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.cxXeWOXZJHJ2C_zTrUOZ4moJmBNRAE7jTd56ju8y7QxC9hFPDRq4d0aeX9X5Onxkk-zg15-cn_kNJxQCTL3LzQ1EZYI7xY4AkIviQaP2OUjg2hYj32jtO0enfPV9gnUwkNTonTzUhWFdpCxbFuyzpfolVYd9Gy8RQKpyBqU7UtO_e_f4XVEpyBDov6yZJA_VT69-d9fuVn9p_Bt-PyNe9uSxt3hyHTvyn5uIBtUhkGuoEgi3u8pFmxn8V_fBeTizWFqv_uEftdK9rqrONxf-bGBVWBOCYzmkuAYwGE4WwYkx1jJMoycxsn42dRVmcAiMBiDWZFvOUf6ubMGk6FzzFQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\": \"comments parts\",\r\n    \"userHandle\": \"new1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/scream",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"scream"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"new1@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"confirmPassword\": \"123456\",\r\n    \"handle\": \"new1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {token}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"abcd@gmail.com\",\r\n    \"password\" : \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-triber-bf4d1.cloudfunctions.net/api/login",
+					"protocol": "https",
+					"host": [
+						"us-central1-triber-bf4d1",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Image_Uploading",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzUwM2UwYWVjNTJkZGZiODk2NTIxYjkxN2ZiOGUyMGMxZjMzMDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHJpYmVyLWJmNGQxIiwiYXVkIjoidHJpYmVyLWJmNGQxIiwiYXV0aF90aW1lIjoxNjAxNzk0MTEyLCJ1c2VyX2lkIjoiaEp5M21KakltU2g0dUlGTnB6c2VTWE9YMmYzMiIsInN1YiI6ImhKeTNtSmpJbVNoNHVJRk5wenNlU1hPWDJmMzIiLCJpYXQiOjE2MDE3OTQxMTIsImV4cCI6MTYwMTc5NzcxMiwiZW1haWwiOiJhYmNkQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhYmNkQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.FNVpRPp7gXysw_nhhFlBFMJiqHIQvGmv0bmmQQ-NjX5CH2N9OLg7J_NYH0aKtOK9e4gpT3tjl4U6P16B-BdG-XCEe8Fg-K19vMsy9DJBZdSVxjcf_0xypsm81iQXC4MMCRZAUajKIRAnGqRtSdlGkuwnktcApSmIxsOmCG-cpWhA7SXK59nMtKADwhVa1-PEPdz7x_DjHfXmLmyFytVJO6fhHMDfgsuYBBNDm7a66s4Ekyiv78Ptrk5IOlA3YBPcwODxATB3yXXaQMaY1IxfmEiPrOjbgtg-qePVqz3FMbNA1SgG2EXQmGYt3HodcGswyG6egBLYEuE8ymqcpujgKA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/user/image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"user",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User_details",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzUwM2UwYWVjNTJkZGZiODk2NTIxYjkxN2ZiOGUyMGMxZjMzMDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHJpYmVyLWJmNGQxIiwiYXVkIjoidHJpYmVyLWJmNGQxIiwiYXV0aF90aW1lIjoxNjAxODE5NDI4LCJ1c2VyX2lkIjoiUmJQRlJGYjNjWGY0Z0ZIenZkOG1HcUxMQmQwMyIsInN1YiI6IlJiUEZSRmIzY1hmNGdGSHp2ZDhtR3FMTEJkMDMiLCJpYXQiOjE2MDE4MTk0MjgsImV4cCI6MTYwMTgyMzAyOCwiZW1haWwiOiJuZXcxQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZXcxQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.F10TDLSIO1ee5ch81CEziySA-PNnV6ewhzURzaH7pEiXAGS1vCJJeJsVCtp8Jze-E9M29OOmR97Cej2F5gZirXhmJ0LFSB0XuNNt9JoA6wEqtuikg1C_qZ2372Mv01p7yDntyj4Lpxd77-3WuCjAt03gyNQjt-XWeSwLp7-UjobB0wRTT94K5Ewh0-ZGsOQRXTFptf6rxEFSeHWMCzVObV6EnicbUF66Qr4qWa95n3YHLwgjDLlXjlPiWjfxmp8jR8Y7mT1ymyv_gBdCfMKGCOuQ3GN42gvno6V3bpjBdn0Ld6Y9Ot7cF_yTNGhvLngUbjJyyReowpFWgQfoEi8jUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bio\": \"Hello I am new1\",\r\n    \"website\": \"https://abcde.com\",\r\n    \"location\": \"Bareilly, UP ,IN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/scream/IuWNSsxuZLKQr5WcYqlT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"scream",
+						"IuWNSsxuZLKQr5WcYqlT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Posting a Scream",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzUwM2UwYWVjNTJkZGZiODk2NTIxYjkxN2ZiOGUyMGMxZjMzMDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHJpYmVyLWJmNGQxIiwiYXVkIjoidHJpYmVyLWJmNGQxIiwiYXV0aF90aW1lIjoxNjAxOTA1MjU0LCJ1c2VyX2lkIjoiUnFQblp1TjVDd2h3ZWo2Qm9mUVhZdU1HcG5FMyIsInN1YiI6IlJxUG5adU41Q3dod2VqNkJvZlFYWXVNR3BuRTMiLCJpYXQiOjE2MDE5MDUyNTQsImV4cCI6MTYwMTkwODg1NCwiZW1haWwiOiJhQGIuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFAYi5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.OKsOlTxGxfAHMVArXMqLt5tIdUtK33_e8yAHt7HHHlbz4TFvpPiCJxHHflPAgPVtEFADJD366_MxmFUOiOHydsmo4ENi8rvD1VsAAizFl8KNyts2hwqsnuy5vUXRj6JcBtC28MfeoL2Jy-BeNMOl4weJneNz7zq46sWXiIDpO3_yalzy7XvXeFHSTSjYwGRvZE2Y9fB0WadWlPUOCBRXW1s1mQ6m18aRQcgxRvK-ba6bvtTFL24atjKTbpJk4KqQRXZCoYb86rGWPJjDtSU9s7d3b5AEZf_1ezzjmFx_b8sLfefqmLk2GiLdZDLaOWDm3IXmH0Lqd7_9x5-co-_OLA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\": \"Hello Ji Last Part of Backend\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/scream",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"scream"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Commenting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzUwM2UwYWVjNTJkZGZiODk2NTIxYjkxN2ZiOGUyMGMxZjMzMDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHJpYmVyLWJmNGQxIiwiYXVkIjoidHJpYmVyLWJmNGQxIiwiYXV0aF90aW1lIjoxNjAxODgwMzM5LCJ1c2VyX2lkIjoiaEp5M21KakltU2g0dUlGTnB6c2VTWE9YMmYzMiIsInN1YiI6ImhKeTNtSmpJbVNoNHVJRk5wenNlU1hPWDJmMzIiLCJpYXQiOjE2MDE4ODAzMzksImV4cCI6MTYwMTg4MzkzOSwiZW1haWwiOiJhYmNkQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhYmNkQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.emvzffRmQteJL-XV3dLWl0nmGHyYsGm7vfMWX0dmKUPO4jN68GceFtxIdH7kq69aQKuEbZTqhQ5ZdlQVI2IsDtwSnlfB4XB3WfIwolHRSmem-LmWXGshedLqBwW9zT7MYD4xi7JvTpInGlewMGehlAzcHLrU8UaC6vvQBYyDzOyvXL-ozG9OucosGKgkPFpuKyWTnj5tsy-pDg2b-giZ8qNlYNTHO9L74MacMkwHRHfYewkV29AY2rPvNAwb0yjLQoSx7Pyj3Gb4UWZBfa0nmoIst_K0Odtq86frLVBcWWbmRimSo-Wd0SrZcfsQ_oKtgj35xGGcEFr3yv0oG5IFQg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\" : \"05/10/2020 commenting 999\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/scream/IuWNSsxuZLKQr5WcYqlT/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"scream",
+						"IuWNSsxuZLKQr5WcYqlT",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Liking a scream",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzUwM2UwYWVjNTJkZGZiODk2NTIxYjkxN2ZiOGUyMGMxZjMzMDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHJpYmVyLWJmNGQxIiwiYXVkIjoidHJpYmVyLWJmNGQxIiwiYXV0aF90aW1lIjoxNjAxOTA1MjU0LCJ1c2VyX2lkIjoiUnFQblp1TjVDd2h3ZWo2Qm9mUVhZdU1HcG5FMyIsInN1YiI6IlJxUG5adU41Q3dod2VqNkJvZlFYWXVNR3BuRTMiLCJpYXQiOjE2MDE5MDUyNTQsImV4cCI6MTYwMTkwODg1NCwiZW1haWwiOiJhQGIuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFAYi5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.OKsOlTxGxfAHMVArXMqLt5tIdUtK33_e8yAHt7HHHlbz4TFvpPiCJxHHflPAgPVtEFADJD366_MxmFUOiOHydsmo4ENi8rvD1VsAAizFl8KNyts2hwqsnuy5vUXRj6JcBtC28MfeoL2Jy-BeNMOl4weJneNz7zq46sWXiIDpO3_yalzy7XvXeFHSTSjYwGRvZE2Y9fB0WadWlPUOCBRXW1s1mQ6m18aRQcgxRvK-ba6bvtTFL24atjKTbpJk4KqQRXZCoYb86rGWPJjDtSU9s7d3b5AEZf_1ezzjmFx_b8sLfefqmLk2GiLdZDLaOWDm3IXmH0Lqd7_9x5-co-_OLA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/scream/mUWPslhbVRk36hhOWpwq/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"scream",
+						"mUWPslhbVRk36hhOWpwq",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unliking a scream",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzUwM2UwYWVjNTJkZGZiODk2NTIxYjkxN2ZiOGUyMGMxZjMzMDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHJpYmVyLWJmNGQxIiwiYXVkIjoidHJpYmVyLWJmNGQxIiwiYXV0aF90aW1lIjoxNjAxODgwMzM5LCJ1c2VyX2lkIjoiaEp5M21KakltU2g0dUlGTnB6c2VTWE9YMmYzMiIsInN1YiI6ImhKeTNtSmpJbVNoNHVJRk5wenNlU1hPWDJmMzIiLCJpYXQiOjE2MDE4ODAzMzksImV4cCI6MTYwMTg4MzkzOSwiZW1haWwiOiJhYmNkQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhYmNkQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.emvzffRmQteJL-XV3dLWl0nmGHyYsGm7vfMWX0dmKUPO4jN68GceFtxIdH7kq69aQKuEbZTqhQ5ZdlQVI2IsDtwSnlfB4XB3WfIwolHRSmem-LmWXGshedLqBwW9zT7MYD4xi7JvTpInGlewMGehlAzcHLrU8UaC6vvQBYyDzOyvXL-ozG9OucosGKgkPFpuKyWTnj5tsy-pDg2b-giZ8qNlYNTHO9L74MacMkwHRHfYewkV29AY2rPvNAwb0yjLQoSx7Pyj3Gb4UWZBfa0nmoIst_K0Odtq86frLVBcWWbmRimSo-Wd0SrZcfsQ_oKtgj35xGGcEFr3yv0oG5IFQg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/scream/mUWPslhbVRk36hhOWpwq/unlike",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"scream",
+						"mUWPslhbVRk36hhOWpwq",
+						"unlike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting Scream",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzUwM2UwYWVjNTJkZGZiODk2NTIxYjkxN2ZiOGUyMGMxZjMzMDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHJpYmVyLWJmNGQxIiwiYXVkIjoidHJpYmVyLWJmNGQxIiwiYXV0aF90aW1lIjoxNjAxOTA3NzMxLCJ1c2VyX2lkIjoiaEp5M21KakltU2g0dUlGTnB6c2VTWE9YMmYzMiIsInN1YiI6ImhKeTNtSmpJbVNoNHVJRk5wenNlU1hPWDJmMzIiLCJpYXQiOjE2MDE5MDc3MzEsImV4cCI6MTYwMTkxMTMzMSwiZW1haWwiOiJhYmNkQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhYmNkQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.qnlUYtIcZ5hvwjakXe7Y4wvolwWN6udWnAtMQQc2jTCOcNTfnf8-ITwZvelzVqdPKfJD8gNnXiifzjOYjxnNmgiBULQSJo5iA1XuFv4gqyvPFYnsSwZ1_Mj-hWCVFDZXZcNdCWVlHXhDzj_nrFho7jZfFop6DV6hgKLU3mMyL6sSEoAIPvr6EIBGKbAiYLuPVvBQV_vNrxbk4RIPwDcSmXufHeDRF0kpN-vtgBJ4Ac-HOYWtttl0bp0LUD7iUD_Jo1wlbTQ9tN87sNL5s2VUzvoKaIlXIgYvIbYYvIMT0AZlylhIiavjU0mjU_iJPFJpb79w21gNgOjheILnTmSJ8Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-triber-bf4d1.cloudfunctions.net/api/scream/mUWPslhbVRk36hhOWpwq",
+					"protocol": "https",
+					"host": [
+						"us-central1-triber-bf4d1",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+						"scream",
+						"mUWPslhbVRk36hhOWpwq"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Detail of Any User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/user/abcd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"user",
+						"abcd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Notifications Read",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NzUwM2UwYWVjNTJkZGZiODk2NTIxYjkxN2ZiOGUyMGMxZjMzMDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHJpYmVyLWJmNGQxIiwiYXVkIjoidHJpYmVyLWJmNGQxIiwiYXV0aF90aW1lIjoxNjAxODk3MTc0LCJ1c2VyX2lkIjoiaEp5M21KakltU2g0dUlGTnB6c2VTWE9YMmYzMiIsInN1YiI6ImhKeTNtSmpJbVNoNHVJRk5wenNlU1hPWDJmMzIiLCJpYXQiOjE2MDE4OTcxNzQsImV4cCI6MTYwMTkwMDc3NCwiZW1haWwiOiJhYmNkQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhYmNkQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.Nv2YaT_01yXj-76ftTptBPNNBId5RQMxn2y-Yc2JIQa3KL7xEGuX9h77Ghls7HDMA0-mg1e26OFgXrBClRO34A6EtsKpzct3hNgQqWglFbuF8HrT8s0RxgfG_-U8qvgEUbevJoPpcgYhuS41n8ZU_Q7xf-aEorUOsiOmwlVc0vZ5ddCgxGGwbMJ06WchWzmSYHLMkgGc3lZlcqvVDrtZLUUHbtf9RMrxjN67GdpLBLsuacV9O_yCnxUv_fYLRZw2DxWyQvI3aZXWyhkkgtR1OjzKJR6Flnq4uPGokieQvf8FTWVSarA3O0DxXN5ZQ8LwI94tfkBe7luA8vxB85CAJg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"3mMTtySbPAI9Vb02X1m4\"\r\n]"
+				},
+				"url": {
+					"raw": "http://localhost:5000/triber-bf4d1/us-central1/api/notifications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"triber-bf4d1",
+						"us-central1",
+						"api",
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "279beeb0-efe4-4e59-842a-62366074b1a5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "73c5b13f-21ad-49f6-85d7-2e33736696bb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

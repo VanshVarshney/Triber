@@ -1,6 +1,65 @@
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+
+  /* font-family: 'Baloo Bhai 2', cursive; */
+  font-family: 'Montserrat Alternates', sans-serif;
+  /* font-family: 'Ubuntu', sans-serif; */
+  /* font-family: 'Ubuntu Mono', monospace; */
+
+  background-color: rgb(245, 245, 245);
+
+  /* background: linear-gradient(
+    137deg,
+    rgba(1, 0, 11, 1) 0%,
+    rgba(71, 19, 80, 1) 9%,
+    rgba(140, 32, 147, 1) 25%,
+    rgba(155, 52, 245, 1) 50%,
+    rgba(98, 0, 255, 1) 80%,
+    rgba(35, 5, 83, 1) 100%
+  );
+ */
+  /* background: rgb(232, 188, 207); */
+  /* background: radial-gradient(
+      circle,
+      rgba(232, 188, 207, 1) 0%,
+      rgba(189, 145, 232, 1) 0%,
+      rgba(198, 185, 210, 1) 40%,
+      rgba(211, 184, 237, 1) 74%,
+      rgba(224, 224, 224, 1) 100%,
+      rgba(255, 255, 255, 1) 100%,
+      rgba(244, 244, 244, 1) 100%
+    )
+    center; */
+
+  /* opacity: 0.5; */
+
+  /* filter: blur(8px); */
+  /* -webkit-filter: blur(8px); */
+}
+
+.container {
+  margin: 80px auto 0 auto;
+
+  max-width: 1200px;
+}
+.nav-container {
+  background: linear-gradient(to right, #de6161 0%, #2657eb 100%);
+
+  /* position: absolute; */
+}
+.nav-container-1 {
+  margin-left: 50px;
+}
+.nav-container-2 {
+  float: right;
+  /* text-align: right;  */
+  margin: auto;
+
+  margin-right: 50px;
+}
+a {
+  text-decoration: none;
 }

@@ -1,13 +1,181 @@
 import React, { Component } from 'react';
+import withStyles from '@material-ui/core/styles/withStyles';
+import PropTypes from 'prop-types';
+import AppIcon from '../images/user.svg';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+// MUI
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+const styles = {
+  typography: {
+    useNextVariants: true,
+  },
+  form: {
+    textAlign: 'center',
+  },
+  image: {
+    width: '50px',
+    margin: '20px auto 20px 70px',
+  },
+  pageTitle: {
+    margin: '20px auto 20px auto',
+  },
+  textField: {
+    // width: '250px',
+    margin: '10px auto 10px auto',
+    // height: 200,
+  },
+  button: {
+    margin: '20px auto 20px auto',
+    padding: '10px 50px 10px 50px',
+    marginLeft: '35px',
+    position: 'relative',
+  },
+  customError: {
+    color: 'red',
+    fontSize: '0.8rem',
+    marginTop: 15,
+    marginBottom: 5,
+  },
+  progress: {
+    position: 'absolute',
+  },
+};
 
 class login extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      email: '',
+      password: '',
+      loading: false,
+      errors: {},
+    };
+  }
+
+  handleSubmit = (Event) => {
+    Event.preventDefault();
+    this.setState({
+      loading: true,
+    });
+    const userData = {
+      email: this.state.email,
+      password: this.state.password,
+    };
+    axios
+      .post('/login', userData)
+      .then((res) => {
+        console.log(res.data);
+        localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`);
+        this.setState({
+          loading: false,
+        });
+        this.props.history.push('/');
+      })
+      .catch((err) => {
+        this.setState({
+          errors: err.response.data,
+          loading: false,
+        });
+      });
+  };
+
+  handleChange = (Event) => {
+    this.setState({
+      [Event.target.name]: Event.target.value,
+    });
+  };
+
   render() {
+    const { classes } = this.props;
+    const { errors, loading, reset } = this.state;
+
     return (
-      <div>
-        <h1>Login Page</h1>
-      </div>
+      <Grid comtainer className={classes.form}>
+        <Grid item sm />
+        <Grid item sm>
+          <img src={AppIcon} alt="Triber Logo" className={classes.image} />
+          TRIBER
+          <br />
+          <Typography variant="h3" className={classes.pageTitle}>
+            Login
+          </Typography>
+          <form noValidate onSubmit={this.handleSubmit}>
+            <TextField
+              id="email"
+              name="email"
+              type="email"
+              label="Email"
+              className={classes.textField}
+              helperText={errors.email}
+              error={errors.email ? true : false}
+              value={this.state.email}
+              onChange={this.handleChange}
+              fullWidth
+            />
+
+            <TextField
+              id="password"
+              name="password"
+              type="password"
+              label="Password"
+              className={classes.textField}
+              helperText={errors.password}
+              error={errors.password ? true : false}
+              value={this.state.password}
+              onChange={this.handleChange}
+              fullWidth
+            />
+            {errors.general && (
+              <Typography variant="body2" className={classes.customError}>
+                {errors.general}
+              </Typography>
+            )}
+
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              disabled={loading}
+            >
+              {' '}
+              LOGIN{' '}
+              {loading && (
+                <CircularProgress size={30} className={classes.progress} />
+              )}
+            </Button>
+            <Button
+              onClick={reset}
+              variant="contained"
+              color="primary"
+              className={classes.button}
+            >
+              {' '}
+              Reset{' '}
+            </Button>
+            <br />
+            <small>
+              {' '}
+              Don't have an Account ? <Link to="/signup">SignUp</Link> here{' '}
+            </small>
+          </form>
+        </Grid>
+        <Grid item sm />
+      </Grid>
     );
   }
 }
 
-export default login;
+login.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(login);
