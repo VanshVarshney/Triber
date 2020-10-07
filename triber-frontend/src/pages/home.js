@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import Scream from '../components/Scream';
+import Profile from '../components/Profile';
 
 class home extends Component {
   state = {
@@ -28,12 +29,12 @@ class home extends Component {
       <p>Loading..</p>
     );
     return (
-      <Grid container spacing={16}>
+      <Grid container spacing={5}>
         <Grid item sm={8} xs={12}>
           <p>{recentScreamsMarkup}</p>
         </Grid>
         <Grid item sm={4} xs={12}>
-          <p>Profile Data ..</p>
+          <Profile />
         </Grid>
       </Grid>
     );
