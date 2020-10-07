@@ -3,23 +3,39 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
-import themeFile from './util/theme';
+
 import jwtDecode from 'jwt-decode';
+import axios from 'axios';
+
+// Redux
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import { SET_AUTHENTICATED } from './redux/types';
+import { logoutUser, getUserData } from './redux/actions/userActions';
 
 // Components
 import Navbar from './components/Navbar';
 import AuthRoute from './util/AuthRoute';
+
+import themeObject from './util/theme';
+import themeFile from './util/theme';
 
 // Pages
 
 import home from './pages/home';
 import login from './pages/login';
 import signup from './pages/signup';
+// import user from './pages/user';
 
 //
 const theme = createMuiTheme(themeFile);
 
 //
+axios.defaults.baseURL =
+  'https://us-central1-triber-bf4d1.cloudfunctions.net/api';
+
+//
+
 let authenticated;
 const token = localStorage.FBIdToken;
 if (token) {
@@ -35,7 +51,7 @@ if (token) {
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
-      <div className="App">
+      <Provider store={store}>
         <Router>
           <Navbar />
           <div className="container">
@@ -56,7 +72,7 @@ function App() {
             </Switch>
           </div>
         </Router>
-      </div>
+      </Provider>
     </MuiThemeProvider>
   );
 }
