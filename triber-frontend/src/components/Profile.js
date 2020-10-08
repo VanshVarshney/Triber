@@ -22,6 +22,11 @@ import { connect } from 'react-redux';
 
 //
 const styles = {
+  paper: {
+    padding: 20,
+    marginTop: 50,
+    marginLeft: 10,
+  },
   profile: {
     '& .image-wrapper': {
       textAlign: 'center',
@@ -65,13 +70,19 @@ const styles = {
     },
   },
 };
-
+let bio = 'i am developer';
+let handle = 'devq';
+let createdAt = '2020-10-05T09:09:34.877Z';
+let website = 'website.me';
+let location = 'New Delhi';
+let imageUrl =
+  'https://firebasestorage.googleapis.com/v0/b/triber-bf4d1.appspot.com/o/no-image.png?alt=media';
 class Profile extends Component {
   render() {
     const {
       classes,
       user: {
-        credentials: { handle, createdAt, imageUrl, bio, website, location },
+        // credentials: { handle, createdAt, imageUrl, bio, website, location },
         loading,
         authenticated,
       },
@@ -82,8 +93,13 @@ class Profile extends Component {
         <Paper className={classes.paper}>
           <div className={classes.profile}>
             <div className="image-wrapper">
-              <img src={imageUrl} alt="profile" className="profile-image" />
+              <img
+                src={imageUrl}
+                alt="Profile_Image"
+                className="profile-image"
+              />
             </div>
+
             <hr />
             <div className="profile-details">
               <MuiLink
@@ -99,7 +115,7 @@ class Profile extends Component {
               <hr />
               {location && (
                 <Fragment>
-                  <LocationOn color="primary" /> <span>{location}</span>
+                  <LocationOn color="primary" /> <span> {location} </span>
                   <hr />
                 </Fragment>
               )}
@@ -121,7 +137,7 @@ class Profile extends Component {
       ) : (
         <Paper className={classes.paper}>
           <Typography variant="body2" align="center">
-            No profile found, please login again
+            No Profile Found, Please Login Again !
           </Typography>
           <div className={classes.buttons}>
             <Button
@@ -144,7 +160,7 @@ class Profile extends Component {
         </Paper>
       )
     ) : (
-      <p>loading...</p>
+      <p>load ing...</p>
     );
 
     return profileMarkup;
