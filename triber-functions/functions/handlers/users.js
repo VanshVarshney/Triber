@@ -169,7 +169,7 @@ exports.getAuthenticatedUser = (req, res) => {
     .get()
     .then((doc) => {
       if (doc.exists) {
-        userData.Credentials = doc.data();
+        userData.credentials = doc.data();
         return db
           .collection('likes')
           .where('userHandle', '==', req.user.handle)
@@ -178,9 +178,9 @@ exports.getAuthenticatedUser = (req, res) => {
     })
     .then((data) => {
       userData.likes = [];
-      // data.forEach((doc) => {
-      //   userData.likes.push(doc.data());
-      //});
+      data.forEach((doc) => {
+        userData.likes.push(doc.data());
+      });
       return db
         .collection('notifications')
         .where('recipient', '==', req.user.handle)

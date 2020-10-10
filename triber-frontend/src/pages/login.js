@@ -37,7 +37,13 @@ const styles = {
   button: {
     margin: '20px auto 20px auto',
     padding: '10px 50px 10px 50px',
-    marginLeft: '35px',
+    // marginLeft: '25px',
+    position: 'relative',
+  },
+  button2: {
+    margin: '20px auto 20px auto',
+    padding: '10px 50px 10px 50px',
+    marginLeft: '25px',
     position: 'relative',
   },
   customError: {
@@ -48,6 +54,12 @@ const styles = {
   },
   progress: {
     position: 'absolute',
+  },
+  footerPro: {
+    margin: '20px auto 0px auto',
+    // position: 'absolute',
+    width: '80%',
+    bottom: 10,
   },
 };
 
@@ -146,16 +158,24 @@ class login extends Component {
               onClick={reset}
               variant="contained"
               color="primary"
-              className={classes.button}
+              className={classes.button2}
             >
               {' '}
               Reset{' '}
             </Button>
             <br />
+
             <small>
               {' '}
               Don't have an Account ? <Link to="/signup">SignUp</Link> here{' '}
             </small>
+            <br />
+            <div className={classes.footerPro}>
+              <hr />
+
+              <small fullWidth>Made With ❤️ By Team Triber</small>
+            </div>
+            <br />
           </form>
         </Grid>
         <Grid item sm />

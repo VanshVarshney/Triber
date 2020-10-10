@@ -50,6 +50,12 @@ const styles = {
   progress: {
     position: 'absolute',
   },
+  footerPro: {
+    margin: '20px auto 0px auto',
+    // position: 'absolute',
+    width: '80%',
+    bottom: 10,
+  },
 };
 
 class signup extends Component {
@@ -195,6 +201,13 @@ class signup extends Component {
               {' '}
               Already have an Account ? <Link to="/login">Login</Link> here{' '}
             </small>
+            <br />
+            <div className={classes.footerPro}>
+              <hr />
+
+              <small fullWidth>Made With ❤️ By Team Triber</small>
+            </div>
+            <br />
           </form>
         </Grid>
         <Grid item sm />

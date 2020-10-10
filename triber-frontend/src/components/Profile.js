@@ -70,19 +70,31 @@ const styles = {
     },
   },
 };
-let bio = 'i am developer';
-let handle = 'devq';
+
+/*
+// Dummy Data Working Fine
+
+let bio = 'Hi i am Full Stack Developer';
+let handle = 'vanshvarshney';
 let createdAt = '2020-10-05T09:09:34.877Z';
-let website = 'website.me';
+let website = 'https://vanshvarshney.me';
 let location = 'New Delhi';
 let imageUrl =
   'https://firebasestorage.googleapis.com/v0/b/triber-bf4d1.appspot.com/o/no-image.png?alt=media';
+
+*/
+
 class Profile extends Component {
+  handleImageChange = (event) => {
+    const image = event.target.files[0];
+    // sending to server
+  };
+
   render() {
     const {
       classes,
       user: {
-        // credentials: { handle, createdAt, imageUrl, bio, website, location },
+        credentials: { handle, createdAt, imageUrl, bio, website, location },
         loading,
         authenticated,
       },
@@ -97,6 +109,11 @@ class Profile extends Component {
                 src={imageUrl}
                 alt="Profile_Image"
                 className="profile-image"
+              />
+              <input
+                type="file"
+                id="imageInput"
+                onChange={this.handleImageChange}
               />
             </div>
 
