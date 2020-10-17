@@ -70,11 +70,14 @@ class signup extends Component {
       errors: {},
     };
   }
+  //
   componentWillReceiveProps(nextProps) {
     if (nextProps.UI.errors) {
       this.setState({ errors: nextProps.UI.errors });
     }
   }
+  // ********************************************************
+  // Handlers
 
   handleSubmit = (Event) => {
     Event.preventDefault();
@@ -95,6 +98,7 @@ class signup extends Component {
       [Event.target.name]: Event.target.value,
     });
   };
+  // ********************************************************
 
   render() {
     const {

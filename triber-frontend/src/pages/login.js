@@ -72,11 +72,16 @@ class login extends Component {
       errors: {},
     };
   }
+
+  //
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.UI.errors) {
       this.setState({ errors: nextProps.UI.errors });
     }
   }
+  // ********************************************************
+  // Handlers
   handleSubmit = (Event) => {
     Event.preventDefault();
     const userData = {
@@ -91,6 +96,7 @@ class login extends Component {
       [Event.target.name]: Event.target.value,
     });
   };
+  // ********************************************************
 
   render() {
     const {

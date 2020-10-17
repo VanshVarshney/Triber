@@ -59,7 +59,7 @@ export const logoutUser = () => (dispatch) => {
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-// Data Fetchers
+// User Data Handlers
 
 export const getUserData = () => (dispatch) => {
   dispatch({ type: LOADING_USER });

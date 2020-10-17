@@ -50,6 +50,12 @@ body {
 
   /* position: absolute; */
 }
+.nav-container {
+  color: #ffffff;
+}
+.nav-container svg {
+  color: #ffffff;
+}
 .nav-container-1 {
   margin-left: 50px;
 }
