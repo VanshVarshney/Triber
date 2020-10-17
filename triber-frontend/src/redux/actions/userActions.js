@@ -74,7 +74,6 @@ export const getUserData = () => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-/*
 export const uploadImage = (formData) => (dispatch) => {
   dispatch({ type: LOADING_USER });
   axios
@@ -105,7 +104,7 @@ export const markNotificationsRead = (notificationIds) => (dispatch) => {
     })
     .catch((err) => console.log(err));
 };
-*/
+
 // helper func for authoriazation
 
 const setAuthorizationHeader = (token) => {

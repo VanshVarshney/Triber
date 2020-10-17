@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import MuiLink from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
+import { IconButton } from '@material-ui/core';
+import Tooltip from '@material-ui/core/Tooltip';
 
 // Icons
 import LocationOn from '@material-ui/icons/LocationOn';
@@ -19,6 +21,7 @@ import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 
 //Redux
 import { connect } from 'react-redux';
+import { logoutUser, uploadImage } from '../redux/actions/userActions';
 
 //
 const styles = {
@@ -71,23 +74,19 @@ const styles = {
   },
 };
 
-/*
-// Dummy Data Working Fine
-
-let bio = 'Hi i am Full Stack Developer';
-let handle = 'vanshvarshney';
-let createdAt = '2020-10-05T09:09:34.877Z';
-let website = 'https://vanshvarshney.me';
-let location = 'New Delhi';
-let imageUrl =
-  'https://firebasestorage.googleapis.com/v0/b/triber-bf4d1.appspot.com/o/no-image.png?alt=media';
-
-*/
-
 class Profile extends Component {
   handleImageChange = (event) => {
     const image = event.target.files[0];
+
     // sending to server
+    const formData = new FormData();
+    formData.append('image', image, image.name);
+    this.props.uploadImage(formData);
+  };
+
+  handleEditPicture = () => {
+    const fileInput = document.getElementById('imageInput');
+    fileInput.click();
   };
 
   render() {
@@ -113,8 +112,14 @@ class Profile extends Component {
               <input
                 type="file"
                 id="imageInput"
+                hidden="hidden"
                 onChange={this.handleImageChange}
               />
+              <Tooltip title="Edit Profile Picture" placement="top">
+                <IconButton onClick={this.handleEditPicture} className="button">
+                  <EditIcon color="primary" />
+                </IconButton>
+              </Tooltip>
             </div>
 
             <hr />
@@ -128,7 +133,7 @@ class Profile extends Component {
                 @{handle}
               </MuiLink>
               <hr />
-              {bio && <Typography variant="body2">{bio}</Typography>}
+              {bio}
               <hr />
               {location && (
                 <Fragment>
@@ -177,7 +182,7 @@ class Profile extends Component {
         </Paper>
       )
     ) : (
-      <p>load ing...</p>
+      <p>loading...</p>
     );
 
     return profileMarkup;
@@ -188,9 +193,16 @@ const mapStateToProps = (state) => ({
   user: state.user,
 });
 
+const mapActionsToProps = { logoutUser, uploadImage };
+
 Profile.propTypes = {
   user: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired,
+  logoutUser: PropTypes.func.isRequired,
+  uploadImage: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(withStyles(styles)(Profile));
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(withStyles(styles)(Profile));

@@ -231,17 +231,14 @@ exports.uploadImage = (req, res) => {
     ) {
       return res.status(400).json({ error: 'Wrong File Type Selected' });
     }
-    // console.log(fieldname);
-    // console.log(filename);
-    // console.log(mimetype);
 
     // file name => my.Image.PNG
     const imageExtension = filename.split('.')[filename.split('.').length - 1];
 
     // 6784534857349858349.png (image filename random no .png)
-    const imageFileName = `${Math.round(
+    imageFileName = `${Math.round(
       Math.random() * 100000000000
-    )}.${imageExtension}`;
+    ).toString()}.${imageExtension}`;
 
     const filepath = path.join(os.tmpdir(), imageFileName);
     imageToBeUploaded = { filepath, mimetype };
@@ -258,6 +255,8 @@ exports.uploadImage = (req, res) => {
         metadata: {
           metadata: {
             contentType: imageToBeUploaded.mimetype,
+
+            //Generate token to be appended to imageUrl
           },
         },
       })

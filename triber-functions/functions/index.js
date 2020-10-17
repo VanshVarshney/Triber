@@ -171,4 +171,6 @@ exports.onScreamDelete = functions.firestore
       .catch((err) => console.error(err));
   });
 
+// ALL API EXPORTS
+
 exports.api = functions.https.onRequest(app);
