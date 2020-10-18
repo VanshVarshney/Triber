@@ -179,7 +179,13 @@ class login extends Component {
             <div className={classes.footerPro}>
               <hr />
 
-              <small fullWidth>Made With ❤️ By Team Triber</small>
+              <small fullWidth>
+                Made With{' '}
+                <span role="img" aria-label="Love">
+                  ❤️
+                </span>{' '}
+                By Team Triber
+              </small>
             </div>
             <br />
           </form>

@@ -66,6 +66,9 @@ body {
 
   margin-right: 50px;
 }
+.nav-container-3 {
+  margin: auto;
+}
 a {
   text-decoration: none;
 }
