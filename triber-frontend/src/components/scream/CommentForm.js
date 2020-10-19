@@ -11,6 +11,11 @@ import { submitComment } from '../../redux/actions/dataActions';
 
 const styles = (theme) => ({
   ...theme.spread,
+  submitButton: {
+    marginTop: 20,
+    marginBottom: 15,
+    color: 'white',
+  },
 });
 
 class CommentForm extends Component {
@@ -18,7 +23,7 @@ class CommentForm extends Component {
     body: '',
     errors: {},
   };
-
+  //
   componentWillReceiveProps(nextProps) {
     if (nextProps.UI.errors) {
       this.setState({ errors: nextProps.UI.errors });
@@ -28,6 +33,9 @@ class CommentForm extends Component {
     }
   }
 
+  // ****************
+  // Handlers
+
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -35,6 +43,7 @@ class CommentForm extends Component {
     event.preventDefault();
     this.props.submitComment(this.props.screamId, { body: this.state.body });
   };
+  // ****************
 
   render() {
     const { classes, authenticated } = this.props;
@@ -46,7 +55,7 @@ class CommentForm extends Component {
           <TextField
             name="body"
             type="text"
-            label="Comment on scream"
+            label="Your Comment on this Post .."
             error={errors.comment ? true : false}
             helperText={errors.comment}
             value={this.state.body}
@@ -58,7 +67,7 @@ class CommentForm extends Component {
             type="submit"
             variant="contained"
             color="primary"
-            className={classes.button}
+            className={classes.submitButton}
           >
             Submit
           </Button>

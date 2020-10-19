@@ -71,6 +71,7 @@ const styles = {
     textAlign: 'center',
     '& a': {
       margin: '20px 10px',
+      color: '#ffffff',
     },
   },
 };

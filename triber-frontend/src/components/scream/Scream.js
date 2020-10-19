@@ -48,7 +48,7 @@ class Scream extends Component {
         userHandle,
         screamId,
         likeCount,
-        commentcount,
+        commentCount,
       },
       user: {
         authenticated,
@@ -94,7 +94,7 @@ class Scream extends Component {
           <MyButton tip="Comment">
             <ChatIcon color="primary" />
           </MyButton>
-          <span>{commentcount} Comments </span>
+          <span>{commentCount} Comments </span>
 
           <ScreamDialog
             screamId={screamId}

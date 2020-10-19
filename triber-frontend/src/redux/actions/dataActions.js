@@ -131,7 +131,7 @@ export const deleteScream = (screamId) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-// Getting user Data
+// Getting user Data ( user profile page )
 
 export const getUserData = (userHandle) => (dispatch) => {
   dispatch({ type: LOADING_DATA });
