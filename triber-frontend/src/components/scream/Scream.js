@@ -62,8 +62,6 @@ class Scream extends Component {
       ) : null;
 
     return (
-      // Structure:-
-
       <Card className={classes.card}>
         <CardMedia
           image={userImage}

@@ -23,10 +23,8 @@ class user extends Component {
     screamIdParam: null,
   };
   componentDidMount() {
-    // fetching handle & screamId
     const handle = this.props.match.params.handle;
     const screamId = this.props.match.params.screamId;
-    //
     if (screamId) this.setState({ screamIdParam: screamId });
 
     this.props.getUserData(handle);

@@ -1,13 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import withStyles from '@material-ui/core/styles/withStyles';
 import Skeleton from 'react-loading-skeleton';
 
-const styles = (theme) => ({
-  ...theme.spread,
-});
-
-const ScreamSkeleton = (props) => {
+const ScreamSkeleton = () => {
   return (
     <section>
       <h2 className="section-title">
@@ -37,8 +31,4 @@ const ScreamSkeleton = (props) => {
   );
 };
 
-ScreamSkeleton.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(ScreamSkeleton);
+export default ScreamSkeleton;
