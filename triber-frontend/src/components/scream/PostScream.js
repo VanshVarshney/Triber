@@ -23,6 +23,7 @@ const styles = (theme) => ({
     position: 'relative',
     float: 'right',
     marginTop: 10,
+    color: 'white',
   },
   progressSpinner: {
     position: 'absolute',

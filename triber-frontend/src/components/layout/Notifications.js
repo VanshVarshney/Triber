@@ -93,7 +93,10 @@ class Notifications extends Component {
         })
       ) : (
         <MenuItem onClick={this.handleClose}>
-          All Set, No New Notifications Yet !
+          <Typography variant="caption">
+            {' '}
+            All Set, No New Notifications Yet !
+          </Typography>
         </MenuItem>
       );
     return (

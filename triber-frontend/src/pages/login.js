@@ -30,22 +30,16 @@ const styles = {
     margin: '20px auto 20px auto',
   },
   textField: {
-    // width: '250px',
     margin: '10px auto 10px auto',
     // height: 200,
   },
   button: {
     margin: '20px auto 20px auto',
     padding: '10px 50px 10px 50px',
-    // marginLeft: '25px',
     position: 'relative',
+    color: '#F5F5F5',
   },
-  button2: {
-    margin: '20px auto 20px auto',
-    padding: '10px 50px 10px 50px',
-    marginLeft: '25px',
-    position: 'relative',
-  },
+
   customError: {
     color: 'red',
     fontSize: '0.8rem',
@@ -96,6 +90,13 @@ class login extends Component {
       [Event.target.name]: Event.target.value,
     });
   };
+
+  handleReset = () => {
+    this.setState({
+      email: '',
+      password: '',
+    });
+  };
   // ********************************************************
 
   render() {
@@ -103,10 +104,10 @@ class login extends Component {
       classes,
       UI: { loading },
     } = this.props;
-    const { errors, reset } = this.state;
+    const { errors } = this.state;
 
     return (
-      <Grid comtainer className={classes.form}>
+      <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
           <img src={AppIcon} alt="Triber Logo" className={classes.image} />
@@ -128,7 +129,6 @@ class login extends Component {
               onChange={this.handleChange}
               fullWidth
             />
-
             <TextField
               id="password"
               name="password"
@@ -146,7 +146,6 @@ class login extends Component {
                 {errors.general}
               </Typography>
             )}
-
             <Button
               type="submit"
               variant="contained"
@@ -160,17 +159,17 @@ class login extends Component {
                 <CircularProgress size={30} className={classes.progress} />
               )}
             </Button>
+            {'    '}
             <Button
-              onClick={reset}
+              onClick={this.handleReset}
               variant="contained"
               color="primary"
-              className={classes.button2}
+              className={classes.button}
             >
               {' '}
               Reset{' '}
             </Button>
             <br />
-
             <small>
               {' '}
               Don't have an Account ? <Link to="/signup">SignUp</Link> here{' '}

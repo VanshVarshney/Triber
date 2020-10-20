@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import Scream from '../components/scream/Scream';
 import StaticProfile from '../components/profile/StaticProfile';
+
 import ScreamSkeleton from '../util/ScreamSkeleton';
 import ProfileSkeleton from '../util/ProfileSkeleton';
+
+import noPost from '../images/noPost.png';
 // MUI
 
 import Grid from '@material-ui/core/Grid';
@@ -40,12 +43,11 @@ class user extends Component {
   render() {
     const { screams, loading } = this.props.data;
     const { screamIdParam } = this.state;
-    const handle = this.props.match.params.handle;
 
     const screamsMarkup = loading ? (
       <ScreamSkeleton />
     ) : screams === null ? (
-      <h3 color="primary">There is no Recent Posts from " {handle} " !</h3>
+      <img src={noPost} alt="No Posts Yet" />
     ) : !screamIdParam ? (
       screams.map((scream) => <Scream key={scream.screamId} scream={scream} />)
     ) : (

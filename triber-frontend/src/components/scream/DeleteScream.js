@@ -26,7 +26,7 @@ class DeleteScream extends Component {
   state = {
     open: false,
   };
-
+  // ***************
   // Handlers
 
   handleOpen = () => {
@@ -40,7 +40,7 @@ class DeleteScream extends Component {
     this.setState({ open: false });
   };
 
-  //
+  // ***********
 
   render() {
     const { classes } = this.props;

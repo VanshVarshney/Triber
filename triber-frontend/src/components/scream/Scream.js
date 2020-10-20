@@ -63,7 +63,6 @@ class Scream extends Component {
 
     return (
       // Structure:-
-      // profile image > handle >
 
       <Card className={classes.card}>
         <CardMedia

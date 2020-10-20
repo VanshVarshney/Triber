@@ -31,15 +31,14 @@ const styles = {
     margin: '10px auto 20px auto',
   },
   textField: {
-    // width: '250px',
     margin: '10px auto 10px auto',
     // height: 200,
   },
   button: {
     margin: '20px auto 20px auto',
     padding: '10px 50px 10px 50px',
-    marginLeft: '35px',
     position: 'relative',
+    color: '#F5F5F5',
   },
   customError: {
     color: 'red',
@@ -98,6 +97,15 @@ class signup extends Component {
       [Event.target.name]: Event.target.value,
     });
   };
+
+  handleReset = () => {
+    this.setState({
+      email: '',
+      password: '',
+      confirmPassword: '',
+      handle: '',
+    });
+  };
   // ********************************************************
 
   render() {
@@ -105,10 +113,10 @@ class signup extends Component {
       classes,
       UI: { loading },
     } = this.props;
-    const { errors, reset } = this.state;
+    const { errors } = this.state;
 
     return (
-      <Grid comtainer className={classes.form}>
+      <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
           <img
@@ -134,7 +142,6 @@ class signup extends Component {
               onChange={this.handleChange}
               fullWidth
             />
-
             <TextField
               id="password"
               name="password"
@@ -171,13 +178,11 @@ class signup extends Component {
               onChange={this.handleChange}
               fullWidth
             />
-
             {errors.general && (
               <Typography variant="body2" className={classes.customError}>
                 {errors.general}
               </Typography>
             )}
-
             <Button
               type="submit"
               variant="contained"
@@ -190,9 +195,9 @@ class signup extends Component {
               {loading && (
                 <CircularProgress size={30} className={classes.progress} />
               )}
-            </Button>
+            </Button>{' '}
             <Button
-              onClick={reset}
+              onClick={this.handleReset}
               variant="contained"
               color="primary"
               className={classes.button}
