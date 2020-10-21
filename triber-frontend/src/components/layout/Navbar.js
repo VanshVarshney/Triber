@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import MyButton from '../../util/MyButton';
 import PostScream from '../scream/PostScream';
@@ -14,8 +13,22 @@ import Button from '@material-ui/core/Button';
 // Icons
 
 import HomeIcon from '@material-ui/icons/Home';
+import { IconButton } from '@material-ui/core';
+import Tooltip from '@material-ui/core/Tooltip';
+import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
+
+// Redux
+import { connect } from 'react-redux';
+import { logoutUser } from '../../redux/actions/userActions';
 
 class Navbar extends Component {
+  // Logout Funcationality
+  handleLogout = () => {
+    this.props.logoutUser();
+  };
+
+  // AC
+
   render() {
     const { authenticated } = this.props;
 
@@ -35,6 +48,11 @@ class Navbar extends Component {
 
                 <Notifications />
               </div>
+              <Tooltip title="Logout" placement="top">
+                <IconButton onClick={this.handleLogout}>
+                  <KeyboardReturn color="primary" />
+                </IconButton>
+              </Tooltip>
             </Fragment>
           ) : (
             <Fragment>
@@ -61,10 +79,13 @@ class Navbar extends Component {
 
 Navbar.propTypes = {
   authenticated: PropTypes.bool.isRequired,
+  logoutUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   authenticated: state.user.authenticated,
 });
 
-export default connect(mapStateToProps)(Navbar);
+const mapActionsToProps = { logoutUser };
+
+export default connect(mapStateToProps, mapActionsToProps)(Navbar);
