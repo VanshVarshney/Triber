@@ -18,7 +18,6 @@ import AuthRoute from './util/AuthRoute';
 import themeFile from './util/theme';
 
 // Pages
-
 import home from './pages/home';
 import login from './pages/login';
 import signup from './pages/signup';
